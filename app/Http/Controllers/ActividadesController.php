@@ -18,9 +18,9 @@ class ActividadesController extends Controller
     public function get($id = null)
     {
         if($id){
-            $actividad = actividades::find($id);
+            $actividades = actividades::find($id);
 
-            if ($actividad==null) {
+            if ($actividades==null) {
                 $mensaje="dato(s) no encontrados";
             }else{
                 $mensaje="dato(s) encontrados";
@@ -30,6 +30,8 @@ class ActividadesController extends Controller
                 'data' => $actividad,
                 'message' => $mensaje
             ],200);
+            // return view('Actividades.Actividades', [$actividades]);
+
         }
         else{
             $actividades = actividades::all();
@@ -38,11 +40,13 @@ class ActividadesController extends Controller
             }else{
                 $mensaje="dato(s) encontrados";
             }
-            return response()->json([
-                'status' => '200',
-                'data' => $actividades,
-                'message' => $mensaje
-            ],200);
+            // return response()->json([
+            //     'status' => '200',
+            //     'data' => $actividades,
+            //     'message' => $mensaje
+            // ],200);
+            return view('Actividades.get', [$actividades]);
+
         }
 
     }
@@ -66,18 +70,18 @@ class ActividadesController extends Controller
         ))
         {
 
-            $actividad = actividades::create([
+            $actividades = actividades::create([
                 'nombre' => $request->nombre,
                 'descripcion' => $request->descripcion,
 
             ]);
 
-            return response()->json([
-                'status' => '201',
-                'data' => $actividad,
-                'message' => 'Se ha creado la actividad ' . $actividad
-            ],201);
-
+            // return response()->json([
+            //     'status' => '201',
+            //     'data' => $actividad,
+            //     'message' => 'Se ha creado la actividad ' . $actividad
+            // ],201);
+            return view('Actividades.insert', [$actividades]);
         }
         else {
 

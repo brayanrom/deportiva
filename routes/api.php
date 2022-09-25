@@ -23,29 +23,42 @@ use Illuminate\Support\Facades\Auth;
 // });
 
 
-Route::get('actividades/{id?}',[App\Http\Controllers\ActividadesController::class,'get']);
-Route::post('actividades',[App\Http\Controllers\ActividadesController::class,'insert']);
-Route::put('actividades/{id}',[App\Http\Controllers\ActividadesController::class,'update']);
-Route::delete('actividades/{id}',[App\Http\Controllers\ActividadesController::class,'delete']);
+Route::get('actividades/{id?}',[App\Http\Controllers\ActividadesController::class,'get'])->name('actividades.get');
+Route::post('actividades',[App\Http\Controllers\ActividadesController::class,'insert'])->name('actividades.insert');
+Route::put('actividades/{id}',[App\Http\Controllers\ActividadesController::class,'update'])->name('actividades.update');
+Route::delete('actividades/{id}',[App\Http\Controllers\ActividadesController::class,'delete'])->name('actividades.delete');
 
 
-Route::get('membresias/{id?}',[App\Http\Controllers\MembresiasController::class,'get']);
-Route::post('membresias',[App\Http\Controllers\MembresiasController::class,'insert']);
-Route::put('membresias/{id}',[App\Http\Controllers\MembresiasController::class,'update']);
-Route::delete('membresias/{id}',[App\Http\Controllers\MembresiasController::class,'delete']);
+Route::get('membresias/{id?}',[App\Http\Controllers\MembresiasController::class,'get'])->name('membresias.get');
+Route::post('membresias',[App\Http\Controllers\MembresiasController::class,'insert'])->name('membresias.insert');
+Route::put('membresias/{id}',[App\Http\Controllers\MembresiasController::class,'update'])->name('membresias.update');
+Route::delete('membresias/{id}',[App\Http\Controllers\MembresiasController::class,'delete'])->name('membresias.delete');
 
 
 
-Route::get('localidades/{id?}',[App\Http\Controllers\LocalidadesController::class,'get']);
-Route::post('localidades',[App\Http\Controllers\LocalidadesController::class,'insert']);
-Route::put('localidades/{id}',[App\Http\Controllers\LocalidadesController::class,'update']);
-Route::delete('localidades/{id}',[App\Http\Controllers\LocalidadesController::class,'delete']);
+Route::get('localidades/{id?}',[App\Http\Controllers\LocalidadesController::class,'get'])->name('localidades.get');
+Route::post('localidades',[App\Http\Controllers\LocalidadesController::class,'insert'])->name('localidades.insert');
+Route::put('localidades/{id}',[App\Http\Controllers\LocalidadesController::class,'update'])->name('localidades.update');
+Route::delete('localidades/{id}',[App\Http\Controllers\LocalidadesController::class,'delete'])->name('localidades.delete');
 
 
 // pendiente(grupos de familias por misma id/folio)
-// Route::get('familias/{id?}',[App\Http\Controllers\FamiliasController::class,'get']);
-// Route::post('familias',[App\Http\Controllers\FamiliasController::class,'insert']);
-// Route::put('familias/{id}',[App\Http\Controllers\FamiliasController::class,'update']);
-// Route::delete('familias/{id}',[App\Http\Controllers\FamiliasController::class,'delete']);
+// Route::get('familias/{id?}',[App\Http\Controllers\FamiliasController::class,'get'])->name('familias.get');
+// Route::post('familias',[App\Http\Controllers\FamiliasController::class,'insert'])->name('familias.get');
+// Route::put('familias/{id}',[App\Http\Controllers\FamiliasController::class,'update'])->name('familias.get');
+// Route::delete('familias/{id}',[App\Http\Controllers\FamiliasController::class,'delete'])->name('familias.get');
 
 
+
+
+
+
+
+//parte visual pruebas
+Route::get('visual', function () {
+    return view("Actividades.get",
+    ['name' => 'James',
+    'descripcion'=>'Descipcion'
+    ]
+);
+});
