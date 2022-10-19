@@ -19,18 +19,14 @@ class ActividadesController extends Controller
     {
         if($id){
             $actividades = actividades::find($id);
-
             if ($actividades==null) {
                 $mensaje="dato(s) no encontrados";
             }else{
                 $mensaje="dato(s) encontrados";
             }
-            return response()->json([
-                'status' => '200',
-                'data' => $actividad,
-                'message' => $mensaje
-            ],200);
-            // return view('Actividades.Actividades', [$actividades]);
+            return view('Actividades.get')
+                   ->with('act',$actividades)
+                   ->with('unico',1);
 
         }
         else{
@@ -45,7 +41,11 @@ class ActividadesController extends Controller
             //     'data' => $actividades,
             //     'message' => $mensaje
             // ],200);
-            return view('Actividades.get', [$actividades]);
+            
+            // return response($actividades);
+            return view('Actividades.get')
+                   ->with('actividades',$actividades)
+                   ->with('unico',0);
 
         }
 
@@ -54,6 +54,11 @@ class ActividadesController extends Controller
 
     public function insert(Request $request)
     {
+
+
+       
+
+
         if($request->validate([
             'nombre'=>'required|min:2|unique:actividades,nombre',
             'descripcion'=>'required|min:2|unique:actividades,descripcion'
@@ -69,19 +74,17 @@ class ActividadesController extends Controller
         ]
         ))
         {
+            $actividades = actividades::create($request->all());
 
-            $actividades = actividades::create([
-                'nombre' => $request->nombre,
-                'descripcion' => $request->descripcion,
-
-            ]);
+            return redirect()->route('Actividades.insert')
+            ->with('success','La actividad se ha creado.');
 
             // return response()->json([
             //     'status' => '201',
             //     'data' => $actividad,
             //     'message' => 'Se ha creado la actividad ' . $actividad
             // ],201);
-            return view('Actividades.insert', [$actividades]);
+            // return view('Actividades.insert', [$actividades]);
         }
         else {
 
@@ -94,6 +97,13 @@ class ActividadesController extends Controller
         }
 
     }
+
+    public function viewInsert(Request $request)
+    {
+        return view('Actividades.insert');
+    }
+
+
 
 
 

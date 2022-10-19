@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class familias extends Model
+class estado extends Model
 {
-    use HasFactory;
-    protected $table = 'familias';
+    protected $table = 'estado';
     protected $fillable = [
-        'folio',
-        'persona_id'
+        'nombre'
     ];
-
+    use HasFactory;
+    
 }

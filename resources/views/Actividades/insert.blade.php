@@ -12,8 +12,6 @@
     <div class="container mt-3">
     <div class="row">
     <div class="col-md-12">
-    
-
       
     <form action="{{ route('actividades.insert') }}" method="POST">    
     {{-- <form action=""                            method="POST"> --}}
@@ -30,11 +28,6 @@
     <input type="text" class="form-control-plaintext" name="descripcion" placeholder="descripcion">
     </div>
     </div>
-    
-
-    
-    
-
     <button class="btn btn-info col-md-10">Enviar</button>
     </div>
     </form>

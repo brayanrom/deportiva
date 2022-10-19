@@ -13,10 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-
-        //a la espera
-        Schema::create('familias', function (Blueprint $table) {
+        Schema::create('personas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('curp');
+            $table->integer('localidad_id');
+
+
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('familias');
+        Schema::dropIfExists('personas');
     }
 };

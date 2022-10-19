@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('estados', App\Http\Controllers\EstadoController::class);
+Route::resource('ciudades', App\Http\Controllers\CiudadController::class);
+Route::resource('personas', App\Http\Controllers\PersonaController::class);
