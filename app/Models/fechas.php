@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class actividades extends Model
+class fechas extends Model
 {
     use HasFactory;
-    protected $table = 'actividades';
+    protected $table = 'fechas';
     protected $fillable = [
-        'nombre',
-        'descripcion'
-    ];
-}
+        'dia',
+        'hora'
+    ];}

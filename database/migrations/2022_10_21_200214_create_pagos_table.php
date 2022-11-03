@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-
-        //a la espera
-        Schema::create('familias', function (Blueprint $table) {
+        Schema::create('pagos', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('folio');
-            $table->bigInteger('persona_id');
-
+            $table->integer('folio_id');
+            $table->double('pagado',8,2);
+            $table->integer('mes_a_pagar');
+            $table->integer('año_a_pagar');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('familias');
+        Schema::dropIfExists('pagos');
     }
 };

@@ -1,4 +1,4 @@
-@extends('ciudades.layout')
+@extends('municipios.layout')
  
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <h2>Deportiva Digital</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('ciudades.create') }}"> Registra una Ciudad</a>
+                <a class="btn btn-success" href="{{ route('municipios.create') }}"> Registra una Municipio</a>
             </div>
         </div>
     </div>
@@ -21,21 +21,21 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>Ciudad</th>
+            <th>Nombre</th>
             <th>Estado</th>
             <th width="280px">Accion</th>
         </tr>
-        @foreach ($ciudades as $ciudad)
+        @foreach ($municipios as $municipio)
         <tr>
-            <td>{{ $ciudad->id }}</td>
-            <td>{{ $ciudad->nombre }}</td>
-            <td>{{ $ciudad->estado_id }}</td>
+            <th>{{$municipio->id}}</th>
+            <td>{{ $municipio->nombre }}</td>
+            <td>{{ $municipio->estado_id }}</td>
             <td>
-                <form action="{{ route('ciudades.destroy',$ciudad->id) }}" method="POST">
+                <form action="{{ route('municipios.destroy',$municipio->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('ciudades.show',$ciudad->id) }}">Mostrar</a>
+                    <a class="btn btn-info" href="{{ route('municipios.show',$municipio->id) }}">Mostrar</a>
     
-                    <a class="btn btn-primary" href="{{ route('ciudades.edit',$ciudad->id) }}">Editar</a>
+                    <a class="btn btn-primary" href="{{ route('municipios.edit',$municipio->id) }}">Editar</a>
    
                     @csrf
                     @method('DELETE')
@@ -47,6 +47,6 @@
         @endforeach
     </table>
   
-    {!! $ciudades->links() !!}
+    {!! $municipios->links() !!}
       
 @endsection

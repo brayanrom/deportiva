@@ -18,5 +18,9 @@ Route::get('/', function () {
 });
 
 Route::resource('estados', App\Http\Controllers\EstadoController::class);
-Route::resource('ciudades', App\Http\Controllers\CiudadController::class);
+Route::resource('municipios',App\Http\Controllers\MunicipioController::class);
 Route::resource('personas', App\Http\Controllers\PersonaController::class);
+Route::resource('familias', App\Http\Controllers\FamiliasController::class);
+
+
+Route::get('/inicio',[App\Http\Controllers\PrincipalController::class,'menu']);

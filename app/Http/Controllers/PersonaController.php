@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\persona as Persona;
+use App\Models\municipio as Municipio;
+use App\Models\estado as Estado;
+use App\Models\localidades as Localidad;
 
 use Illuminate\Http\Request;
 
@@ -27,7 +30,8 @@ class PersonaController extends Controller
      */
     public function create()
     {
-        return view('personas.create');
+        $localidades = Localidad::all();
+        return view('personas.create',compact('localidades'));
     }
   
     /**
@@ -59,6 +63,8 @@ class PersonaController extends Controller
      */
     public function show(Persona $persona)
     {
+        $Localidad = Localidad::findOrFail($persona['localidad_id']);
+        $persona['localidad_id']=$Localidad->tipo;
         return view('personas.show',compact('persona'));
     }
   
@@ -70,7 +76,8 @@ class PersonaController extends Controller
      */
     public function edit(Persona $persona)
     {
-        return view('personas.edit',compact('persona'));
+        $localidades = Localidad::all();
+        return view('personas.edit',compact('persona'),compact('localidades'));
     }
   
     /**

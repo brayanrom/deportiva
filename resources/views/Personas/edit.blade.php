@@ -49,8 +49,17 @@
             
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>localidad_id:</strong>
-                    <input type="text" name="localidad_id" value="{{ $persona->localidad_id }}" class="form-control" placeholder="localidad_id">
+                    <strong>Localidad:</strong>
+                    {{-- <input type="text" name="localidad_id" value="{{ $persona->localidad_id }}" class="form-control" placeholder="localidad_id"> --}}                    
+                    <select name="localidad_id" class="form-select" aria-label="Default select example">
+                        @foreach ($localidades as $localidad)
+                        <option 
+                        @selected($localidad->id==$persona->localidad_id)
+                        value="{{$localidad->id}}">{{$localidad->tipo}}</option>
+                        @endforeach 
+                    </select>   
+                
+                
                 </div>
             </div>
 

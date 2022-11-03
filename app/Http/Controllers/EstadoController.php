@@ -14,11 +14,15 @@ class estadoController extends Controller
      */
     public function index()
     {
-        $estados = estado::latest()->paginate(5);
-      
+
+        // $estados = estado::all();
+        // return view('estados.index',compact('estados'));
+
+        $estados = estado::latest()
+        ->paginate(5);
         return view('estados.index',compact('estados'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+            ->with('i', (request()->input('page', 1) - 1) * 2);
+        }
   
     /**
      * Show the form for creating a new resource.

@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ciudad', function (Blueprint $table) {
+        Schema::create('fechas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->integer('estado_id');
-            // $table->unsignedBigInteger('estado_id');
-            // $table->foreign('estado_id')->references('id')->on('estado')->onDelete('cascade');
-
+            $table->string('dia');
+            $table->string('hora');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ciudad');
+        Schema::dropIfExists('fechas');
     }
 };

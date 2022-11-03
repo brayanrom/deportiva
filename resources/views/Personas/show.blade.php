@@ -33,8 +33,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>localidad_id:</strong>
+                <strong>Localidad:</strong>
                 {{ $persona->localidad_id }}
+
+
+
+                
             </div>
         </div>
 
