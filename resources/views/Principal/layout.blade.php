@@ -6,7 +6,7 @@
 </head>
 <body>
 
-@include('modulos.nav')
+@include('Modulos.nav')
 
 <div class="container">
     @yield('content')
