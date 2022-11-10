@@ -100,9 +100,8 @@ class MunicipioController extends Controller
         ]);
         
         $municipio->update($request->all());
-      
         return redirect()->route('municipios.index')
-        ->with('success','Municipio Actualizado satisfactoriamente.');
+                ->with('success','Municipio Actualizado satisfactoriamente.');
     }
     /**
      * Remove the specified resource from storage.

@@ -13,4 +13,11 @@ class estado extends Model
     ];
     use HasFactory;
     
+    public function municipio()
+    {
+        return $this->hasMany(municipio::class);
+    }
+
+
+
 }

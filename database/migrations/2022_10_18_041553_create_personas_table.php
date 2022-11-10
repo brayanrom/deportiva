@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('curp');
-            $table->integer('localidad_id');
-
+            // $table->integer('localidad_id');
+            $table->unsignedBigInteger('localidad_id'); 
+            $table->foreign('localidad_id')->references('id')->on('localidades');
 
             $table->timestamps();
         });

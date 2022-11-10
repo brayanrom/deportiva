@@ -14,4 +14,19 @@ class familias extends Model
         'persona_id'
     ];
 
+
+    function persona(){
+        return $this->belongsTo(persona::class,'persona_id');
+    }
+
+    function pagos(){
+        return $this->hasMany(pagos::class);
+    }
+
+
+
+
+
+
+
 }

@@ -14,4 +14,16 @@ class pagos extends Model
         'pagado',
         'mensualidad_a_pagar'
     ];
+
+
+
+    function familias(){
+        return $this->belongsTo(familias::class,'folio_id');
+
+    }
+
+
+
+
+
 }

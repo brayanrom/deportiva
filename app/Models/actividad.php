@@ -5,19 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class fechas extends Model
+class actividad extends Model
 {
     use HasFactory;
-    protected $table = 'fechas';
+    protected $table = 'actividad';
     protected $fillable = [
-        'dia',
-        'hora'
+        'nombre',
+        'descripcion'
     ];
 
-
-
-    function persona_actividad(){
+    
+function persona_actividad(){
         return $this->hasMany(persona_actividad::class);
-    }
+}
 
 }

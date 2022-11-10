@@ -22,14 +22,14 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        \App\Models\actividades::create(['nombre'=>'Natacion','descripcion'=>'descNatacion']);
-        \App\Models\actividades::create(['nombre'=>'Futbol','descripcion'=>'descFutbol']);
-        \App\Models\actividades::create(['nombre'=>'Basquetbol','descripcion'=>'descBasquetbol']);
-        \App\Models\actividades::create(['nombre'=>'Voleyboll','descripcion'=>'descVoleyboll']);
-        \App\Models\actividades::create(['nombre'=>'Box','descripcion'=>'descBox']);
-        \App\Models\actividades::create(['nombre'=>'Lucha Olimpica','descripcion'=>'descLucha']);
-        \App\Models\actividades::create(['nombre'=>'Gimnacio','descripcion'=>'descGimnacio']);
-        \App\Models\actividades::create(['nombre'=>'Bile','descripcion'=>'descBile']);
+        \App\Models\actividad::create(['nombre'=>'Natacion','descripcion'=>'descNatacion']);
+        \App\Models\actividad::create(['nombre'=>'Futbol','descripcion'=>'descFutbol']);
+        \App\Models\actividad::create(['nombre'=>'Basquetbol','descripcion'=>'descBasquetbol']);
+        \App\Models\actividad::create(['nombre'=>'Voleyboll','descripcion'=>'descVoleyboll']);
+        \App\Models\actividad::create(['nombre'=>'Box','descripcion'=>'descBox']);
+        \App\Models\actividad::create(['nombre'=>'Lucha Olimpica','descripcion'=>'descLucha']);
+        \App\Models\actividad::create(['nombre'=>'Gimnacio','descripcion'=>'descGimnacio']);
+        \App\Models\actividad::create(['nombre'=>'Bile','descripcion'=>'descBile']);
 
         \App\Models\membresias::create(['tipo'=>'Individual']);
         \App\Models\membresias::create(['tipo'=>'Familiar']);
@@ -146,6 +146,17 @@ class DatabaseSeeder extends Seeder
         \App\Models\persona_actividad::create(['persona_id'=>3,'actividad_id'=>8,'fechas_id'=>3,'pagos_id'=>2]);
 
 
+        \App\Models\tipo_pago::create(['nombre'=>'Mensualidad individual 1 actividad','costo'=>100]);
+        \App\Models\tipo_pago::create(['nombre'=>'Mensualidad individual 2 actividades','costo'=>150]);
+        \App\Models\tipo_pago::create(['nombre'=>'Mensualidad familiar 2 actividades','costo'=>150]);
+
+        \App\Models\tipo_pago::create(['nombre'=>'Mensualidad individual foraneos 1 actividad','costo'=>150]);
+        \App\Models\tipo_pago::create(['nombre'=>'Mensualidad individual foraneos 2 actividades','costo'=>250]);
+        \App\Models\tipo_pago::create(['nombre'=>'Mensualidad familiar foraneos 2 actividades','costo'=>400]);
+        
+        \App\Models\tipo_pago::create(['nombre'=>'Actividad Extra','costo'=>100]);
+        \App\Models\tipo_pago::create(['nombre'=>'Renta de cancha de Futbol Juvenil','costo'=>150]);
+        \App\Models\tipo_pago::create(['nombre'=>'Renta de cancha de Futbol Libre','costo'=>200]);
 
 
 

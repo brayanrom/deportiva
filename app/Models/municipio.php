@@ -13,4 +13,9 @@ class municipio extends Model
         'nombre',
         'estado_id'
     ];
+    
+    public function estado()
+    {
+        return $this->belongsTo(estado::class,'estado_id');
+    }
 }

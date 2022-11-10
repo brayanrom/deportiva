@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class actividades extends Model
+class tipo_pago extends Model
 {
     use HasFactory;
-    protected $table = 'actividades';
+    protected $table = 'tipo_pagos';
     protected $fillable = [
         'nombre',
-        'descripcion'
+        'costo'
     ];
 }

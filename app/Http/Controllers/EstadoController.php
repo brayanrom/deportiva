@@ -5,7 +5,6 @@ use App\Models\estado;
 use Illuminate\Http\Request;
 
 class estadoController extends Controller
-
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,6 @@ class estadoController extends Controller
      */
     public function index()
     {
-
         // $estados = estado::all();
         // return view('estados.index',compact('estados'));
 

@@ -15,7 +15,11 @@ return new class extends Migration
     {
         Schema::create('pagos', function (Blueprint $table) {
             $table->id();
-            $table->integer('folio_id');
+            // $table->integer('folio_id');
+
+            $table->unsignedBigInteger('folio_id'); 
+            $table->foreign('folio_id')->references('id')->on('familias');
+
             $table->double('pagado',8,2);
             $table->integer('mes_a_pagar');
             $table->integer('año_a_pagar');

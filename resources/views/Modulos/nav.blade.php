@@ -14,6 +14,7 @@
                   Ver Registros
                 </a>
                 <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ route('actividades.index') }}">Actividades</a></li>
                     <li><a class="dropdown-item" href="{{ route('municipios.index') }}">Municipios</a></li>
                     <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
                     <li><a class="dropdown-item" href="{{ route('personas.index') }}">Personas</a></li>
@@ -26,13 +27,13 @@
                   Registrar
                 </a>
                 <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{{ route('actividades.create') }}">Actividades</a></li>
                   <li><a class="dropdown-item" href="{{ route('municipios.create') }}">Municipios</a></li>
                   <li><a class="dropdown-item" href="{{ route('estados.create') }}">Estados</a></li>
                   <li><a class="dropdown-item" href="{{ route('personas.create') }}">Personas</a></li>
                   <li><a class="dropdown-item" href="{{ route('familias.create') }}">Familias</a></li>
                 </ul>
             </li>
-
             </ul>
           </div>
         </div>

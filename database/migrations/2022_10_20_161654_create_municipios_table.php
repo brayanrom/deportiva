@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('municipio', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->integer('estado_id');
+            // $table->integer('estado_id');
+
+            $table->unsignedBigInteger('estado_id');
+            $table->foreign('estado_id')->references('id')->on('estado');
+
             $table->timestamps();
         });
     }

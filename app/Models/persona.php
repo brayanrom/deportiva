@@ -16,4 +16,15 @@ class persona extends Model
     ];
 
     use HasFactory;
+
+
+    function localidad(){
+        return $this->belongsTo(localidad::class,'localidad_id');
+    }
+
+    function persona_actividad(){
+        return $this->hasMany(persona_actividad::class);
+    }
+
+
 }

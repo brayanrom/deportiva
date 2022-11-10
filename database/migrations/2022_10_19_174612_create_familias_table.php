@@ -18,7 +18,10 @@ return new class extends Migration
         Schema::create('familias', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('folio');
-            $table->bigInteger('persona_id');
+            // $table->bigInteger('persona_id');
+            $table->unsignedBigInteger('persona_id');
+            $table->foreign('persona_id')->references('id')->on('personas');
+
 
             $table->timestamps();
         });
