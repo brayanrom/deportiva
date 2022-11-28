@@ -33,6 +33,7 @@ return new class extends Migration
             $table->foreign('pagos_id')->references('id')->on('pagos');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

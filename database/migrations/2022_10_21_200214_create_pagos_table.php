@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('mes_a_pagar');
             $table->integer('año_a_pagar');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

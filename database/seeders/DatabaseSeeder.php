@@ -87,47 +87,47 @@ class DatabaseSeeder extends Seeder
         \App\Models\familias::create(['folio'=>1,'persona_id'=>2]);
 
 
-        \App\Models\fechas::create(['dia'=>'Lunes','hora'=>'8:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Lunes','hora'=>'9:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Lunes','hora'=>'2:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Lunes','hora'=>'4:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Lunes','hora'=>'6:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Lunes','hora'=>'8:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Lunes','hora'=>'8:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Lunes','hora'=>'9:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Lunes','hora'=>'2:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Lunes','hora'=>'4:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Lunes','hora'=>'6:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Lunes','hora'=>'8:00 PM']);
 
-        \App\Models\fechas::create(['dia'=>'Martes','hora'=>'8:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Martes','hora'=>'9:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Martes','hora'=>'2:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Martes','hora'=>'4:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Martes','hora'=>'6:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Martes','hora'=>'8:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Martes','hora'=>'8:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Martes','hora'=>'9:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Martes','hora'=>'2:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Martes','hora'=>'4:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Martes','hora'=>'6:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Martes','hora'=>'8:00 PM']);
 
-        \App\Models\fechas::create(['dia'=>'Miercoles','hora'=>'8:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Miercoles','hora'=>'9:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Miercoles','hora'=>'2:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Miercoles','hora'=>'4:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Miercoles','hora'=>'6:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Miercoles','hora'=>'8:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Miercoles','hora'=>'8:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Miercoles','hora'=>'9:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Miercoles','hora'=>'2:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Miercoles','hora'=>'4:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Miercoles','hora'=>'6:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Miercoles','hora'=>'8:00 PM']);
 
-        \App\Models\fechas::create(['dia'=>'Jueves','hora'=>'8:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Jueves','hora'=>'9:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Jueves','hora'=>'2:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Jueves','hora'=>'4:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Jueves','hora'=>'6:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Jueves','hora'=>'8:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Jueves','hora'=>'8:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Jueves','hora'=>'9:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Jueves','hora'=>'2:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Jueves','hora'=>'4:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Jueves','hora'=>'6:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Jueves','hora'=>'8:00 PM']);
 
-        \App\Models\fechas::create(['dia'=>'Viernes','hora'=>'8:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Viernes','hora'=>'9:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Viernes','hora'=>'2:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Viernes','hora'=>'4:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Viernes','hora'=>'6:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Viernes','hora'=>'8:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Viernes','hora'=>'8:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Viernes','hora'=>'9:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Viernes','hora'=>'2:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Viernes','hora'=>'4:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Viernes','hora'=>'6:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Viernes','hora'=>'8:00 PM']);
 
-        \App\Models\fechas::create(['dia'=>'Sabado','hora'=>'8:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Sabado','hora'=>'9:00 AM']);
-        \App\Models\fechas::create(['dia'=>'Sabado','hora'=>'2:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Sabado','hora'=>'4:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Sabado','hora'=>'6:00 PM']);
-        \App\Models\fechas::create(['dia'=>'Sabado','hora'=>'8:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Sabado','hora'=>'8:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Sabado','hora'=>'9:00 AM']);
+        \App\Models\fecha::create(['dia'=>'Sabado','hora'=>'2:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Sabado','hora'=>'4:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Sabado','hora'=>'6:00 PM']);
+        \App\Models\fecha::create(['dia'=>'Sabado','hora'=>'8:00 PM']);
 
 
         \App\Models\pagos::create(['folio_id'=>1,'pagado'=>500,'mes_a_pagar'=>2,'año_a_pagar'=>2022]);

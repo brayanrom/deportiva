@@ -22,6 +22,7 @@ return new class extends Migration
             $table->foreign('estado_id')->references('id')->on('estado');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

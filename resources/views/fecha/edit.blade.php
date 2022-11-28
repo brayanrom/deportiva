@@ -1,4 +1,4 @@
-@extends('actividades.layout')
+@extends('fecha.layout')
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -6,7 +6,7 @@
                 <h2>Editar Actividad</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('actividades.index') }}">Regresar</a>
+                <a class="btn btn-primary" href="{{ route('fecha.index') }}">Regresar</a>
             </div>
         </div>
     </div>
@@ -22,23 +22,20 @@
         </div>
     @endif
   
-    <form action="{{ route('actividades.update',$actividad->id) }}" method="POST">
+    <form action="{{ route('fecha.update',$fecha->id) }}" method="POST">
         @csrf
         @method('PUT')
    
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nombre:</strong>
-                    <input type="text" name="nombre" value="{{ $actividad->nombre }}" class="form-control" placeholder="nombre">
+                    <strong>Dia:</strong>
+                    <input type="text" name="dia" value="{{ $fecha->dia }}" class="form-control" placeholder="Dia">
                 </div>
                 <div class="form-group">
-                    <strong>Descripcion:</strong>
-                    <input type="text" name="descripcion" value="{{ $actividad->descripcion }}" class="form-control" placeholder="descripcion">
+                    <strong>Hora:</strong>
+                    <input type="text" name="hora" value="{{ $fecha->hora }}" class="form-control" placeholder="Hora">
                 </div>
-
-
-
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Editar Actividad</button>

@@ -2,13 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class fechas extends Model
+class fecha extends Model
 {
-    use HasFactory;
-    protected $table = 'fechas';
+    use HasFactory, SoftDeletes;
+
+    protected $table = 'fecha';
     protected $fillable = [
         'dia',
         'hora'

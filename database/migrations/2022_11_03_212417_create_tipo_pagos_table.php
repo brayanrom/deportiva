@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->integer('costo');
             $table->timestamps();
+            $table->softDeletes();
+            
         });
     }
 

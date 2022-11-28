@@ -1,4 +1,4 @@
-@extends('actividades.layout')
+@extends('actividad.layout')
   
 @section('content')
 <div class="row">
@@ -7,7 +7,7 @@
             <h2>Añador nuevo Actividad</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('actividades.index') }}">Atras</a>
+            <a class="btn btn-primary" href="{{ route('actividad.index') }}">Atras</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     </div>
 @endif
    
-<form action="{{ route('actividades.store') }}" method="POST">
+<form action="{{ route('actividad.store') }}" method="POST">
     @csrf
   
      <div class="row">

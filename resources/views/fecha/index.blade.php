@@ -1,4 +1,4 @@
-@extends('actividades.layout')
+@extends('fecha.layout')
  
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
                 <h2>Deportiva Digital</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('actividades.create') }}"> Crear un Actividad</a>
+                <a class="btn btn-success" href="{{ route('fecha.create') }}"> Crear un Actividad</a>
             </div>
         </div>
     </div>
@@ -21,20 +21,20 @@
     <table class="table table-bordered">
         <tr>
             <th>#</th>
-            <th>nombre</th>
-            <th>descripcion</th>
+            <th>Dia</th>
+            <th>Hora</th>
 
             <th width="280px">Accion</th>
         </tr>
-        @foreach ($actividades as $actividad)
+        @foreach ($fecha as $act)
         <tr>
-            <td>{{ $actividad->id }}</td>
-            <td>{{ $actividad->nombre }}</td>
-            <td>{{ $actividad->descripcion }}</td>
+            <td>{{ $act->id }}</td>
+            <td>{{ $act->dia }}</td>
+            <td>{{ $act->hora }}</td>
 
             <td>
-                <form action="{{ route('actividades.destroy',$actividad->id) }}" method="POST">    
-                    <a class="btn btn-primary" href="{{ route('actividades.edit',$actividad->id) }}">Editar</a>
+                <form action="{{ route('fecha.destroy',$act->id) }}" method="POST">    
+                    <a class="btn btn-primary" href="{{ route('fecha.edit',$act->id) }}">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -44,6 +44,6 @@
         @endforeach
     </table>
   
-    {{-- {!! $actividades->links() !!} --}}
+    {{-- {!! $fecha->links() !!} --}}
       
 @endsection

@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('fechas', function (Blueprint $table) {
+        Schema::create('fecha', function (Blueprint $table) {
             $table->id();
             $table->string('dia');
             $table->string('hora');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fechas');
+        Schema::dropIfExists('fecha');
     }
 };
