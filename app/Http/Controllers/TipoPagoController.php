@@ -17,9 +17,7 @@ class TipoPagoController extends Controller
         // ->paginate(5);
       
         return view('tipospagos.index',compact('tipospagos'));
-        
             // ->with('i', (request()->input('page', 1) - 1) * 5);
-
         }
   
     /**
