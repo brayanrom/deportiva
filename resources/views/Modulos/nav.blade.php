@@ -19,6 +19,9 @@
                     <li><a class="dropdown-item" href="{{ route('estados.index') }}">Estados</a></li>
                     <li><a class="dropdown-item" href="{{ route('personas.index') }}">Personas</a></li>
                     <li><a class="dropdown-item" href="{{ route('familias.index') }}">Familias</a></li>
+                    <li><a class="dropdown-item" href="{{ route('tipospagos.index') }}">Tipos de Pagos</a></li>
+                    <li><a class="dropdown-item" href="{{ route('fecha.index') }}">Fehas</a></li>
+
                   </ul>
               </li>
               <li class="nav-item dropdown">
@@ -31,6 +34,9 @@
                   <li><a class="dropdown-item" href="{{ route('estados.create') }}">Estados</a></li>
                   <li><a class="dropdown-item" href="{{ route('personas.create') }}">Personas</a></li>
                   <li><a class="dropdown-item" href="{{ route('familias.create') }}">Familias</a></li>
+                  <li><a class="dropdown-item" href="{{ route('tipospagos.create') }}">Tipos de Pagos</a></li>
+                  <li><a class="dropdown-item" href="{{ route('fecha.create') }}">Fehas</a></li>
+
                 </ul>
             </li>
             </ul>

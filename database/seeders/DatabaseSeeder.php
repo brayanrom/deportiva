@@ -140,6 +140,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\persona_actividad::create(['persona_id'=>2,'actividad_id'=>2,'fechas_id'=>13,'pagos_id'=>1]);
 
 
+        
         \App\Models\pagos::create(['folio_id'=>2,'pagado'=>500,'mes_a_pagar'=>2,'año_a_pagar'=>2022]);
         \App\Models\persona_actividad::create(['persona_id'=>3,'actividad_id'=>5,'fechas_id'=>1,'pagos_id'=>2]);
         \App\Models\persona_actividad::create(['persona_id'=>3,'actividad_id'=>2,'fechas_id'=>2,'pagos_id'=>2]);
@@ -153,10 +154,11 @@ class DatabaseSeeder extends Seeder
         \App\Models\tipo_pago::create(['nombre'=>'Mensualidad individual foraneos 1 actividad','costo'=>150]);
         \App\Models\tipo_pago::create(['nombre'=>'Mensualidad individual foraneos 2 actividades','costo'=>250]);
         \App\Models\tipo_pago::create(['nombre'=>'Mensualidad familiar foraneos 2 actividades','costo'=>400]);
-        
-        \App\Models\tipo_pago::create(['nombre'=>'Actividad Extra','costo'=>100]);
-        \App\Models\tipo_pago::create(['nombre'=>'Renta de cancha de Futbol Juvenil','costo'=>150]);
-        \App\Models\tipo_pago::create(['nombre'=>'Renta de cancha de Futbol Libre','costo'=>200]);
+
+        //extras
+        // \App\Models\tipo_pago::create(['nombre'=>'Actividad Extra','costo'=>100]);
+        // \App\Models\tipo_pago::create(['nombre'=>'Renta de cancha de Futbol Juvenil','costo'=>150]);
+        // \App\Models\tipo_pago::create(['nombre'=>'Renta de cancha de Futbol Libre','costo'=>200]);
 
 
 
