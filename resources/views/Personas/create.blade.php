@@ -54,11 +54,7 @@
                     @foreach ($localidades as $localidad)
                     <option value="{{$localidad->id}}">{{$localidad->tipo}}</option>
                     @endforeach 
-                </select>   
-
-
-
-
+                </select>
             </div>
         </div>
 
