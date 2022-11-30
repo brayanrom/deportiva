@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\familias as Familia;
 use App\Models\persona as Persona;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -15,10 +16,10 @@ class FamiliasController extends Controller
      */
     public function index()
     {
-        $personas = Persona::all();
-        $familias = Familia::latest()->paginate(5);
-        return view('familias.index',compact('familias'),compact('personas'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $personas = DB::select('select id,nombre from personas ');
+
+        $familias = DB::select('select id,folio,persona_id from familias ');
+        return view('familias.index',compact('familias'),compact('personas'));
     }
   
     /**

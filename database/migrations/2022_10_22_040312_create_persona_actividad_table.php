@@ -26,7 +26,7 @@ return new class extends Migration
 
             // $table->integer('fechas_id');
             $table->unsignedBigInteger('fechas_id');
-            $table->foreign('fechas_id')->references('id')->on('fechas');
+            $table->foreign('fechas_id')->references('id')->on('fecha');
 
             // $table->integer('pagos_id');
             $table->unsignedBigInteger('pagos_id');

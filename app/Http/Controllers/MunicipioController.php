@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\municipio as Municipio;
 use App\Models\estado as Estado;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -15,14 +16,13 @@ class MunicipioController extends Controller
      */
     public function index()
     {
-        $municipios = Municipio::latest()->paginate(5);      
+        $municipios = DB::select('select id,nombre,estado_id  from municipio');
         foreach($municipios as $municipiosList) {
-            $Estado = Estado::findOrFail($municipiosList['estado_id']);
-            $municipiosList['estado_id']=$Estado->nombre;
+            $Estado = Estado::findOrFail($municipiosList->estado_id);
+            $municipiosList->estado_id=$Estado->nombre;
         }
 
-        return view('municipios.index',compact('municipios'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('municipios.index',compact('municipios'));
     }
   
     /**

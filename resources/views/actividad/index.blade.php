@@ -18,7 +18,8 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
         <tr>
             <th>#</th>
             <th>nombre</th>
@@ -26,6 +27,8 @@
 
             <th width="280px">Accion</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach ($actividad as $act)
         <tr>
             <td>{{ $act->id }}</td>
@@ -42,6 +45,7 @@
             </td>
         </tr>
         @endforeach
+    </tbody>
     </table>
   
     {{-- {!! $actividad->links() !!} --}}

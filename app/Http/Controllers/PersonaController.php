@@ -5,6 +5,7 @@ use App\Models\persona as Persona;
 use App\Models\municipio as Municipio;
 use App\Models\estado as Estado;
 use App\Models\localidades as Localidad;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -17,10 +18,9 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $personas = Persona::latest()->paginate(5);
-      
-        return view('personas.index',compact('personas'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $personas = DB::select('select id,nombre,apellido from personas ');
+        
+        return view('personas.index',compact('personas'));
     }
   
     /**

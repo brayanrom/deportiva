@@ -1,5 +1,4 @@
 @extends('familias.layout')
- 
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -11,56 +10,50 @@
             </div>
         </div>
     </div>
-   
+
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
     @endif
-   
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>Folio</th>
-            <th>Nombre</th>
-            <th width="280px">Accion</th>
-        </tr>
-        @foreach ($familias as $familia)
-        <tr>
-            <th>{{$familia->id}}</th>
-            <td>{{ $familia->folio }}</td>
-            <td>
-                {{-- {{ $familia->persona_id }} --}}
-                @foreach ($personas as $persona)
-                    @if ($familia->persona_id==$persona->id)
-                        {{$persona->nombre}}
-                    @endif 
-                @endforeach 
-            </td>
 
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Folio</th>
+                <th>Nombre</th>
+                <th width="280px">Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($familias as $familia)
+                <tr>
+                    <th>{{ $familia->id }}</th>
+                    <td>{{ $familia->folio }}</td>
+                    <td>
+                        {{-- {{ $familia->persona_id }} --}}
+                        @foreach ($personas as $persona)
+                            @if ($familia->persona_id == $persona->id)
+                                {{ $persona->nombre }}
+                            @endif
+                        @endforeach
+                    </td>
+                    <td>
+                        <form action="{{ route('familias.destroy', $familia->id) }}" method="POST">
 
+                            <a class="btn btn-info" href="{{ route('familias.show', $familia->id) }}">Mostrar</a>
 
+                            <a class="btn btn-primary" href="{{ route('familias.edit', $familia->id) }}">Editar</a>
 
+                            @csrf
+                            @method('DELETE')
 
-
-
-            <td>
-                <form action="{{ route('familias.destroy',$familia->id) }}" method="POST">
-   
-                    <a class="btn btn-info" href="{{ route('familias.show',$familia->id) }}">Mostrar</a>
-    
-                    <a class="btn btn-primary" href="{{ route('familias.edit',$familia->id) }}">Editar</a>
-   
-                    @csrf
-                    @method('DELETE')
-      
-                    <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>
-            </td>
-        </tr>
-        @endforeach
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
-  
-    {!! $familias->links() !!}
-      
 @endsection

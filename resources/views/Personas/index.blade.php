@@ -18,13 +18,16 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+      <thead
         <tr>
             <th>#</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th width="280px">Accion</th>
         </tr>
+    </thead>
+    <tbody>
         @foreach ($personas as $persona)
         <tr>
             <td>{{ $persona->id }}</td>
@@ -45,8 +48,8 @@
             </td>
         </tr>
         @endforeach
+    </tbody>
     </table>
   
-    {!! $personas->links() !!}
       
 @endsection

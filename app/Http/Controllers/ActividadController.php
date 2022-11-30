@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\actividad as Actividad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -15,7 +16,8 @@ class ActividadController extends Controller
      */
     public function index()
     {
-        $actividad = Actividad::all();
+        $actividad = DB::select('select id,nombre,descripcion from actividad');
+
         return view('actividad.index',compact('actividad'));
     }
   

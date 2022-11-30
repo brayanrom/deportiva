@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\estado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class estadoController extends Controller
 {
@@ -16,10 +17,9 @@ class estadoController extends Controller
         // $estados = estado::all();
         // return view('estados.index',compact('estados'));
 
-        $estados = estado::latest()
-        ->paginate(5);
-        return view('estados.index',compact('estados'))
-            ->with('i', (request()->input('page', 1) - 1) * 2);
+        $estados = DB::select('select id,nombre from estado');
+
+        return view('estados.index',compact('estados'));
         }
   
     /**
